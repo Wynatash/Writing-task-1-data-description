@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Writing Task 1 - Full Exercise Series</title>
+    <style>
+        :root { 
+            --primary-color: #ff6d3a; 
+            --bg-color: #FFFAF6; 
+            --correct-color: #28a745; 
+            --error-color: #dc3545; 
+            --hover-color: #fff3ed;
+        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        
+        .global-header { text-align: center; border-bottom: 3px solid var(--primary-color); margin-bottom: 30px; padding-bottom: 20px; }
+        .user-info { background: #fff3ed; padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 2px solid var(--primary-color); display: flex; align-items: center; justify-content: center; gap: 15px; position: sticky; top: 10px; z-index: 1000; }
+        .user-info input { padding: 12px; width: 350px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+        .page-node { display: none; }
+        .page-node.active { display: block; }
+
+        h1 { color: var(--primary-color); text-align: center; text-transform: uppercase; margin-bottom: 30px; }
+        h2 { color: #fff; background: var(--primary-color); padding: 12px; border-radius: 5px; font-size: 1.1em; text-transform: uppercase; margin-top: 25px; }
+        
+        .exercise-section { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        .exercise-image { flex: 1; position: sticky; top: 120px; }
+        .exercise-content { flex: 1.5; }
+        
+        .graph-box { border: 3px solid var(--primary-color); border-radius: 12px; padding: 10px; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .graph-box img { width: 100%; height: auto; border-radius: 5px; display: block; }
+        
+        .question-item, .question-block { background: #fff; border: 1px solid #eee; padding: 20px; margin-bottom: 15px; border-radius: 10px; }
+        .instruction { font-style: italic; color: #666; margin-bottom: 15px; background: #fdf2ee; padding: 10px; border-radius: 5px; border-left: 4px solid var(--primary-color); }
+
+        .feedback, .explanation { margin-top: 15px; padding: 12px; border-radius: 6px; display: none; font-size: 0.95em; }
+        .feedback.wrong, .incorrect { background: #fee; color: var(--error-color); border: 1px solid #fcc; }
+        .feedback.right, .correct { background: #efe; color: var(--correct-color); border: 1px solid #cfc; }
+        .explanation { background: #f0f9ff; border-left: 4px solid #3498db; color: #333; }
+
+        .vocab-pool { display: flex; flex-wrap: wrap; gap: 8px; background: #fff3ed; padding: 20px; border: 2px dashed var(--primary-color); border-radius: 12px; margin-bottom: 20px; }
+        .drag-item { background: var(--primary-color); color: white; padding: 6px 14px; border-radius: 20px; cursor: grab; font-weight: 500; font-size: 0.9em; user-select: none; }
+        .drop-zone { display: inline-block; min-width: 120px; border-bottom: 2px solid var(--primary-color); text-align: center; color: var(--primary-color); font-weight: bold; min-height: 24px; vertical-align: middle; padding: 0 10px; }
+
+        .nav-controls { display: flex; justify-content: center; gap: 20px; margin-top: 40px; padding: 20px; border-top: 1px solid #eee; }
+        .btn { padding: 15px 40px; border-radius: 35px; font-size: 1.1em; cursor: pointer; font-weight: bold; transition: 0.3s; border: none; }
+        .btn-next { background: var(--primary-color); color: white; }
+        .btn-prev { background: #666; color: white; }
+        .btn-submit { background: #28a745; color: white; width: 100%; max-width: 300px; margin: 20px auto; display: block; }
+        
+        .score-display { text-align: center; font-size: 1.5em; font-weight: bold; color: var(--primary-color); margin: 20px 0; display: none; padding: 20px; border: 2px solid var(--primary-color); border-radius: 10px; }
+        input[type="text"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; }
+        .feedback-icon { font-weight: bold; margin-left: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="global-header">
+        <h1>IELTS WRITING TASK 1 TRAINING</h1>
+        <div class="user-info">
+            <strong>HỌ VÀ TÊN HỌC SINH:</strong>
+            <input type="text" id="globalStudentName" placeholder="Nhập tên của bạn...">
+        </div>
+        <div id="totalMasterScore" style="display:none; font-size: 1.4em; color: #d35400; font-weight: bold; background: #fff3ed; padding: 15px; border-radius: 10px; border: 2px solid var(--primary-color); margin-top: 10px;"></div>
+    </div>
+
+    <div id="page1" class="page-node active">
+        <h1>PHẦN 1: TẢ DATA TUYỆT ĐỐI VÀ ĐỔI CẤU TRÚC CÂU</h1>
+        <div class="exercise-section">
+            <div class="exercise-image">
+                <div class="graph-box">
+                    <img src="https://drive.google.com/thumbnail?id=1IKN2EnWKOjG401FzP9ja7qIMieCqDBpX&sz=w1000" alt="IELTS Graph">
+                    <p style="text-align: center; color: #888;"><i>Overseas visitors to the UK (1989 - 2009)</i></p>
+                </div>
+            </div>
+            <div class="exercise-content">
+                <form id="quizForm1">
+                    <h2>Chọn những câu ĐÚNG (Có 2 câu đúng)</h2>
+                    <div class="instruction">Đề bài: Lượng khách nước ngoài đến UK du lịch năm 1989 là 6.5 triệu.</div>
+                    <div class="question-item"><label><input type="checkbox" class="p1_check" value="A" data-correct="true"> A. In 1989, the number of visitors from overseas traveling to the UK for holiday stood at 6.5 million.</label><div class="feedback" data-exp="Chính xác! Cấu trúc mô tả data tuyệt đối chuẩn xác."></div></div>
+                    <div class="question-item"><label><input type="checkbox" class="p1_check" value="B" data-correct="false"> B. In 1989, the number of overseas visitors came to the UK for holiday was 6.5 million.</label><div class="feedback" data-exp="Sai: Động từ 'came' chưa có chủ ngữ => cần 'the number of visitors WHO came...'"></div></div>
+                    <div class="question-item"><label><input type="checkbox" class="p1_check" value="C" data-correct="false"> C. In 1989, the number of overseas visitors coming to the UK for holiday was 6.5 millions.</label><div class="feedback" data-exp="Sai: Không dùng 'millions' có 's' sau số đếm cụ thể."></div></div>
+                    <div class="question-item"><label><input type="checkbox" class="p1_check" value="D" data-correct="false"> D. In 1989, the amounts of international visitors who traveled to the UK for holiday were 6.5 million.</label><div class="feedback" data-exp="Sai: 'amount' không đi với danh từ đếm được (visitors)."></div></div>
+                    <div class="question-item"><label><input type="checkbox" class="p1_check" value="E" data-correct="false"> E. In 1989, the amount of international visitors who traveled to the UK for holiday was 6.5 million.</label><div class="feedback" data-exp="Sai: Tương tự câu D, sai cách dùng 'amount'."></div></div>
+                    <div class="question-item"><label><input type="checkbox" class="p1_check" value="F" data-correct="true"> F. In 1989, the number of international visitors traveling to the UK for holiday was 6.5 million.</label><div class="feedback" data-exp="Chính xác! Cấu trúc rút gọn mệnh đề quan hệ đúng ngữ pháp."></div></div>
+
+                    <h2>Chọn chủ ngữ phù hợp (Kéo thả)</h2>
+                    <div class="vocab-pool">
+                        <div class="drag-item" draggable="true">6.5 million overseas visitors</div>
+                        <div class="drag-item" draggable="true">the figure of</div>
+                        <div class="drag-item" draggable="true">The UK</div>
+                        <div class="drag-item" draggable="true">The amount of foreign visitors</div>
+                        <div class="drag-item" draggable="true">6.5 millions of visitors from abroad</div>
+                        <div class="drag-item" draggable="true">The number of people from overseas</div>
+                        <div class="drag-item" draggable="true">the figure for</div>
+                        <div class="drag-item" draggable="true">the number of</div>
+                    </div>
+                    <div class="question-item">3. <div class="drop-zone" data-correct="6.5 million overseas visitors"></div> chose the UK as a destination for their holidays.<div class="feedback" data-exp="Đúng: Chủ ngữ chỉ người thực hiện hành động 'chọn' (chose)."></div></div>
+                    <div class="question-item">4. <div class="drop-zone" data-correct="The UK"></div> welcomed 6.5 million international tourists visiting for holidays.<div class="feedback" data-exp="Đúng: Quốc gia (The UK) đóng vai trò chủ thể 'chào đón'."></div></div>
+                    <div class="question-item">5. <div class="drop-zone" data-correct="The number of people from overseas"></div> going to the UK to meet their friends and relatives was 3.5 million.<div class="feedback" data-exp="Đúng: Cụm danh từ chỉ số lượng người phù hợp."></div></div>
+                    <div class="question-item">6. While 6.5 million visitors went to the UK for their holidays, <div class="drop-zone" data-correct="the figure for"></div> meeting friends and relatives stood at 3.5 million.<div class="feedback" data-exp="Đúng: 'the figure for' dùng để thay thế tránh lặp từ."></div></div>
+                    
+                    <div id="scoreDisplay1" class="score-display"></div>
+                    <button type="button" class="btn btn-submit" onclick="submitPage1()">XÁC NHẬN PHẦN 1</button>
+                </form>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <button class="btn btn-next" onclick="navPage(2)">TIẾP THEO: SỐ LIỆU TƯƠNG ĐỐI ➔</button>
+        </div>
+    </div>
+
+    <div id="page2" class="page-node">
+        <h1>PHẦN 2: TẢ SỐ LIỆU 'TƯƠNG ĐỐI' & PARAPHRASE</h1>
+        
+        <div class="exercise-section">
+            <div class="exercise-image">
+                <div class="graph-box">
+                    <img src="https://drive.google.com/thumbnail?id=1uHmgZwAT6YAfX_HUKaj-LGgWXZNjm_88&sz=w1000" alt="Chart 1">
+                    <p style="text-align: center;"><b>CHART 1</b> - Water Consumption in Australia</p>
+                </div>
+            </div>
+            <div class="exercise-content">
+                <h2>1. Chọn những câu ĐÚNG (Tả % của Business - Chart 1)</h2>
+                <div class="instruction">Lưu ý: Có 2 câu đúng.</div>
+                
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q1" value="A" data-correct="true"> A. The percentage of water consumption in the business sector was 23%.</label>
+                    <div class="feedback" data-exp="ĐÚNG: 'water consumption' là danh từ, dùng với 'percentage of' là đúng."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q1" value="B" data-correct="true"> B. The proportion of water consumed by the business sector was 23%.</label>
+                    <div class="feedback" data-exp="ĐÚNG: 'water consumed by...' (mệnh đề rút gọn bị động) rất hay."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q1" value="C" data-correct="false"> C. The percentage of water consuming by the business sector was 23%.</label>
+                    <div class="feedback" data-exp="SAI: 'consume' không dùng dạng V-ing sau 'of' kiểu này. Phải là 'water consumption' hoặc 'water consumed'."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q1" value="D" data-correct="false"> D. The proportion of water that consumed by the business sector was 23%.</label>
+                    <div class="feedback" data-exp="SAI: Thiếu bị động. 'that consumed' nghĩa là nước tự đi tiêu thụ cái gì đó. Đúng phải là 'that was consumed by'."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q1" value="E" data-correct="false"> E. The percentage of the business sector was 23%.</label>
+                    <div class="feedback" data-exp="SAI: (thiếu thông tin nghiêm trọng) 23% của cái gì? Không nói tới 'water' sẽ bị trừ điểm nặng."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q1" value="F" data-correct="false"> F. The percentage of business using water was 23%.</label>
+                    <div class="feedback" data-exp="SAI: Nghe như 23% số lượng doanh nghiệp có dùng nước, không diễn đạt được lượng nước tiêu thụ."></div>
+                </div>
+
+                <h2>2. Kéo thả từ vựng phù hợp (Chart 1)</h2>
+                <div class="vocab-pool">
+                    <div class="drag-item" draggable="true">used</div>
+                    <div class="drag-item" draggable="true">other sectors</div>
+                    <div class="drag-item" draggable="true">use in other sectors</div>
+                    <div class="drag-item" draggable="true">accounted for</div>
+                    <div class="drag-item" draggable="true">stood at</div>
+                    <div class="drag-item" draggable="true">was consumed by</div>
+                    <div class="drag-item" draggable="true">water used in</div>
+                    <div class="drag-item" draggable="true">the percentage for</div>
+                    <div class="drag-item" draggable="true">the number of</div>
+                    <div class="drag-item" draggable="true">water consumption</div>
+                </div>
+                <div class="question-item">1. Local businesses <div class="drop-zone" data-correct="used"></div> 23% of water in Australia in 2004. <span class="feedback-icon"></span></div>
+                <div class="question-item">2. 6% of water <div class="drop-zone" data-correct="was consumed by"></div> the government. <span class="feedback-icon"></span></div>
+                <div class="question-item">3. The percentage of <div class="drop-zone" data-correct="water used in"></div> other sectors was 3%. <span class="feedback-icon"></span></div>
+                <div class="question-item">4. Industrial activities <div class="drop-zone" data-correct="accounted for"></div> 11% of total water consumption. <span class="feedback-icon"></span></div>
+                <div class="question-item">5. The figure for other sectors <div class="drop-zone" data-correct="stood at"></div> 3%. <span class="feedback-icon"></span></div>
+            </div>
+        </div>
+
+        <div class="exercise-section">
+            <div class="exercise-image">
+                <div class="graph-box">
+                    <img src="https://drive.google.com/thumbnail?id=1CyoC9eZKGQP6fBk_bFdX7WEL6wt-Nxti&sz=w1000" alt="Chart 2">
+                    <p style="text-align: center;"><b>CHART 2</b> - Household Expenditure</p>
+                </div>
+            </div>
+            <div class="exercise-content">
+                <h2>3. Chọn những câu ĐÚNG (Tả % của Housing - Chart 2)</h2>
+                <div class="instruction">Lưu ý: Có 3 câu đúng.</div>
+                
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q3" value="A" data-correct="false"> A. The percentage of housing was 22%.</label>
+                    <div class="feedback" data-exp="SAI: (thiếu đối tượng) 22% của cái gì? budget? expenditure? consumption? Phải là 'the percentage of the budget spent on housing'."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q3" value="B" data-correct="false"> B. The proportion of housing consumption was 22%.</label>
+                    <div class="feedback" data-exp="SAI: 'consume' thường dùng cho water, electricity, food, không dùng cho housing."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q3" value="C" data-correct="false"> C. The percentage of the budget spending on housing was 22%.</label>
+                    <div class="feedback" data-exp="SAI: Lỗi collocation. Không dùng 'percentage of the budget spending'. Đúng phải là 'spent on'."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q3" value="D" data-correct="true"> D. The proportion of the budget spent on housing was 22%.</label>
+                    <div class="feedback" data-exp="ĐÚNG: 'spent on housing' (bị động rút gọn) tự nhiên, học thuật."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q3" value="E" data-correct="true"> E. The percentage of the budget allocated to housing was 22%.</label>
+                    <div class="feedback" data-exp="ĐÚNG: 'allocated to' là từ vựng Task 1 xịn, cấu trúc sạch, logic rõ."></div>
+                </div>
+                <div class="question-item">
+                    <label><input type="checkbox" class="p2_q3" value="F" data-correct="true"> F. The proportion of spending on housing was 22%.</label>
+                    <div class="feedback" data-exp="ĐÚNG: Cấu trúc gọn và tự nhiên, collocation chuẩn."></div>
+                </div>
+
+                <h2>4. Hoàn thành câu (Tự điền - Chart 2)</h2>
+                <div class="question-item">1. 34% of the budget <input type="text" class="p4-input" id="p2_4_1" placeholder="Nhập đáp án..."> food. <span class="feedback-icon"></span></div>
+                <div class="question-item">2. Health care <input type="text" class="p4-input" id="p2_4_2" placeholder="Nhập đáp án..."> 5% of the spending. <span class="feedback-icon"></span></div>
+                <div class="question-item">3. The percentage of expenditure for <input type="text" class="p4-input" id="p2_4_3" placeholder="Nhập đáp án..."> was 14%. <span class="feedback-icon"></span></div>
+                <div class="question-item">4. The proportion for education <input type="text" class="p4-input" id="p2_4_4" placeholder="Nhập đáp án..."> 10%. <span class="feedback-icon"></span></div>
+                
+                <div id="scoreDisplay2" class="score-display"></div>
+                <button type="button" class="btn btn-submit" onclick="submitPage2()">XÁC NHẬN PHẦN 2</button>
+            </div>
+        </div>
+
+        <div class="nav-controls">
+            <button class="btn btn-prev" onclick="navPage(1)">⬅ QUAY LẠI PHẦN 1</button>
+            <button class="btn btn-next" onclick="navPage(3)">TIẾP THEO: SO SÁNH DỮ LIỆU ➔</button>
+        </div>
+    </div>
+
+    <div id="page3" class="page-node">
+        <h1>PHẦN 3: CÁCH SO SÁNH DỮ LIỆU</h1>
+        <div class="exercise-section">
+            <div class="exercise-image">
+                <div class="graph-box">
+                    <img src="https://drive.google.com/thumbnail?id=1uHmgZwAT6YAfX_HUKaj-LGgWXZNjm_88&sz=w1000" alt="Water consumption graph">
+                    <p style="text-align: center;"><i>Chart: Water consumption in Australia</i></p>
+                </div>
+            </div>
+            <div class="right-panel">
+                <h2>I. SO SÁNH HƠN (Sửa lỗi sai)</h2>
+                <div class="instruction">Hãy tìm từ sai trong câu và sửa lại cho đúng.</div>
+                
+                <div class="question-block" data-q="1">
+                    <p>1. The government consumed lower water than the business sector.</p>
+                    Từ sai: <input type="text" class="answer-input wrong-word"> Sửa lại: <input type="text" class="answer-input correct-word"> <span class="feedback-icon"></span>
+                    <div class="explanation"><strong>Giải thích:</strong> 'lower' dùng so sánh vị trí/tỉ lệ. Với danh từ không đếm được (water), dùng <b>less</b>.</div>
+                </div>
+
+                <div class="question-block" data-q="2">
+                    <p>2. The percentage of water was bigger than that of the government.</p>
+                    Từ sai: <input type="text" class="answer-input wrong-word"> Sửa lại: <input type="text" class="answer-input correct-word"> <span class="feedback-icon"></span>
+                    <div class="explanation"><strong>Giải thích:</strong> Nên dùng <b>higher/greater</b> cho percentage.</div>
+                </div>
+
+                <div class="question-block" data-q="3">
+                    <p>3. The business sector used water more than the government.</p>
+                    Từ sai: <input type="text" class="answer-input wrong-word"> Sửa lại: <input type="text" class="answer-input correct-word"> <span class="feedback-icon"></span>
+                    <div class="explanation"><strong>Giải thích:</strong> Trạng từ bổ nghĩa cho động từ dùng <b>more</b>.</div>
+                </div>
+
+                <h2>II. SO SÁNH NHẤT (Sửa lỗi sai)</h2>
+                <div class="question-block" data-q="4">
+                    <p>1. Residential water usage accounted for the most percentage.</p>
+                    Từ sai: <input type="text" class="answer-input wrong-word"> Sửa lại: <input type="text" class="answer-input correct-word"> <span class="feedback-icon"></span>
+                    <div class="explanation"><strong>Giải thích:</strong> Với percentage dùng <b>highest/greatest</b>.</div>
+                </div>
+
+                <div class="question-block" data-q="5">
+                    <p>2. The highest water was used by the residential sector.</p>
+                    Từ sai: <input type="text" class="answer-input wrong-word"> Sửa lại: <input type="text" class="answer-input correct-word"> <span class="feedback-icon"></span>
+                    <div class="explanation"><strong>Giải thích:</strong> Không dùng highest cho danh từ water. Nên dùng <b>most</b>.</div>
+                </div>
+
+                <div class="question-block" data-q="6">
+                    <p>3. The residential area consumed water the highest.</p>
+                    Từ sai: <input type="text" class="answer-input wrong-word"> Sửa lại: <input type="text" class="answer-input correct-word"> <span class="feedback-icon"></span>
+                    <div class="explanation"><strong>Giải thích:</strong> Trạng từ bổ nghĩa cho 'consumed' phải là <b>most</b>.</div>
+                </div>
+
+                <div id="scoreDisplay3" class="score-display"></div>
+                <button type="button" class="btn btn-submit" onclick="submitPage3()">XÁC NHẬN PHẦN 3</button>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <button class="btn btn-prev" onclick="navPage(2)">⬅ QUAY LẠI PHẦN 2</button>
+            <button class="btn btn-next" style="background:#28a745" onclick="showMasterResult()">XEM TỔNG KẾT 🏆</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxSCw_lJbU70Piem2rlhiLmh0ZFDlHJmd7eJ_I0C5wXuRYBJZ-pJlXCaKLL6ifvT_J_/exec';
+    let masterScore = { p1: 0, p2: 0, p3: 0 };
+
+    function navPage(n) {
+        document.querySelectorAll('.page-node').forEach(p => p.classList.remove('active'));
+        document.getElementById('page' + n).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('dragstart', e => { if(e.target.classList.contains('drag-item')) e.dataTransfer.setData('text', e.target.innerText); });
+    document.addEventListener('dragover', e => { if(e.target.classList.contains('drop-zone')) e.preventDefault(); });
+    document.addEventListener('drop', e => {
+        if(e.target.classList.contains('drop-zone')) {
+            e.preventDefault();
+            e.target.innerText = e.dataTransfer.getData('text');
+        }
+    });
+
+    function submitPage1() {
+        const name = document.getElementById('globalStudentName').value.trim();
+        if(!name) return alert("Vui lòng nhập tên!");
+        let s = 0;
+        document.querySelectorAll('#page1 .p1_check').forEach(i => {
+            const fb = i.closest('.question-item').querySelector('.feedback');
+            fb.style.display = 'block';
+            if(i.checked) {
+                if(i.dataset.correct === "true") { s++; fb.className='feedback right'; fb.innerHTML="✅ " + fb.dataset.exp; }
+                else { fb.className='feedback wrong'; fb.innerHTML="❌ " + fb.dataset.exp; }
+            } else {
+                if(i.dataset.correct === "true") { fb.className='feedback wrong'; fb.innerHTML="⚠️ Thiếu đáp án đúng này."; }
+                else { fb.className='feedback right'; fb.innerHTML="✔ " + fb.dataset.exp; }
+            }
+        });
+        document.querySelectorAll('#page1 .drop-zone').forEach(z => {
+            const fb = z.closest('.question-item').querySelector('.feedback');
+            fb.style.display = 'block';
+            if(z.innerText.trim() === z.dataset.correct) { s++; fb.className='feedback right'; fb.innerHTML="✅"; }
+            else { fb.className='feedback wrong'; fb.innerHTML="❌ Sai. Đáp án: " + z.dataset.correct; }
+        });
+        masterScore.p1 = s;
+        document.getElementById('scoreDisplay1').innerHTML = `Kết quả Phần 1: ${s}/10`;
+        document.getElementById('scoreDisplay1').style.display = 'block';
+    }
+
+    function submitPage2() {
+        let s = 0;
+        
+        // Checkboxes Q1 & Q3
+        ['.p2_q1', '.p2_q3'].forEach(selector => {
+            document.querySelectorAll(selector).forEach(i => {
+                const fb = i.closest('.question-item').querySelector('.feedback');
+                fb.style.display = 'block';
+                if(i.checked) {
+                    if(i.dataset.correct === "true") { s++; fb.className='feedback right'; fb.innerHTML="✅ " + fb.dataset.exp; }
+                    else { fb.className='feedback wrong'; fb.innerHTML="❌ " + fb.dataset.exp; }
+                } else {
+                    if(i.dataset.correct === "true") { fb.className='feedback wrong'; fb.innerHTML="⚠️ Thiếu đáp án đúng này."; }
+                    else { fb.className='feedback right'; fb.innerHTML="✔ " + fb.dataset.exp; }
+                }
+            });
+        });
+
+        // Dropzones Chart 1
+        document.querySelectorAll('#page2 .drop-zone').forEach(z => {
+            const icon = z.nextElementSibling;
+            if(z.innerText.trim() === z.dataset.correct) {
+                s++; icon.innerHTML = " ✅"; icon.className = "feedback-icon correct";
+            } else {
+                icon.innerHTML = " ❌ (ĐA: " + z.dataset.correct + ")"; icon.className = "feedback-icon incorrect";
+            }
+        });
+
+        // Part 4 Inputs
+        const inputKeys = {
+            'p2_4_1': ['spent on', 'spent', 'went to', 'allocated to'],
+            'p2_4_2': ['accounted for', 'accounted', 'made up'],
+            'p2_4_3': ['transport', 'transportation'],
+            'p2_4_4': ['stood at', 'was']
+        };
+        for (let id in inputKeys) {
+            const val = document.getElementById(id).value.toLowerCase().trim();
+            const icon = document.getElementById(id).nextElementSibling;
+            if (inputKeys[id].some(k => val.includes(k))) {
+                s++; icon.innerHTML = " ✅"; icon.className = "feedback-icon correct";
+            } else {
+                icon.innerHTML = " ❌"; icon.className = "feedback-icon incorrect";
+            }
+        }
+
+        masterScore.p2 = s;
+        document.getElementById('scoreDisplay2').innerHTML = `Kết quả Phần 2: ${s}/18`;
+        document.getElementById('scoreDisplay2').style.display = 'block';
+    }
+
+    function submitPage3() {
+        let s = 0;
+        const keys = {
+            1: { w: 'lower', c: 'less' },
+            2: { w: 'bigger', c: ['higher', 'greater'] },
+            3: { w: 'more', c: 'more' },
+            4: { w: 'most', c: ['highest', 'greatest'] },
+            5: { w: 'highest', c: 'most' },
+            6: { w: 'highest', c: 'most' }
+        };
+        document.querySelectorAll('#page3 .question-block').forEach(q => {
+            const id = q.dataset.q;
+            const uw = q.querySelector('.wrong-word').value.trim().toLowerCase();
+            const uc = q.querySelector('.correct-word').value.trim().toLowerCase();
+            const icon = q.querySelector('.feedback-icon');
+            
+            const isW = (uw.includes(keys[id].w));
+            const isC = Array.isArray(keys[id].c) 
+                       ? keys[id].c.some(correctChoice => uc.includes(correctChoice)) 
+                       : (uc.includes(keys[id].c));
+
+            if(isW && isC) {
+                s++; icon.innerHTML = " ✅"; icon.className = "feedback-icon correct";
+            } else {
+                icon.innerHTML = " ❌"; icon.className = "feedback-icon incorrect";
+            }
+            q.querySelector('.explanation').style.display = 'block';
+        });
+        masterScore.p3 = s;
+        document.getElementById('scoreDisplay3').innerHTML = `Kết quả Phần 3: ${s}/6`;
+        document.getElementById('scoreDisplay3').style.display = 'block';
+    }
+
+    async function showMasterResult() {
+        const name = document.getElementById('globalStudentName').value.trim();
+        if(!name) return alert("Em cần nhập tên để thầy/cô biết bài của ai nhé!");
+
+        const total = masterScore.p1 + masterScore.p2 + masterScore.p3;
+        const max = 34;
+        const detailStr = `P1: ${masterScore.p1}/10, P2: ${masterScore.p2}/18, P3: ${masterScore.p3}/6`;
+
+        const box = document.getElementById('totalMasterScore');
+        box.style.display = 'block';
+        box.innerHTML = `🏆 TỔNG ĐIỂM TOÀN BỘ: ${total} / ${max} CÂU ĐÚNG. Đang nộp bài...`;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        const data = new FormData();
+        data.append('name', name);
+        data.append('score', total + "/" + max);
+        data.append('details', detailStr);
+
+        try {
+            await fetch(SCRIPT_URL, { method: 'POST', body: data });
+            box.innerHTML = `🏆 TỔNG ĐIỂM TOÀN BỘ: ${total} / ${max} CÂU ĐÚNG. Bài làm đã được gửi tới giáo viên!`;
+            alert("Chúc mừng em đã hoàn thành bài tập!");
+        } catch(e) {
+            box.innerHTML = `🏆 TỔNG ĐIỂM TOÀN BỘ: ${total} / ${max} CÂU ĐÚNG. Lỗi gửi bài!`;
+        }
+    }
+</script>
+</body>
+</html>
